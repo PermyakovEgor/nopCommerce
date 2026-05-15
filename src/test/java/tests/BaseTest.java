@@ -47,11 +47,11 @@ public class BaseTest {
     }
 
 
-//    @AfterEach()
-//    @Description("Закрытие браузера")
-//    public void tearDawn() {
-//        if (driver != null) {
-//            driver.quit();
-//        }
-//    }
+    @AfterEach()
+    @Description("Закрытие браузера")
+    public void tearDawn() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
 }
