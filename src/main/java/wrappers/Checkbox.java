@@ -1,9 +1,11 @@
 package wrappers;
 
+import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+@Log4j2
 public class Checkbox {
 
     WebDriver driver;
@@ -15,6 +17,7 @@ public class Checkbox {
     }
 
     public void selectCheckbox() {
+        log.info("Click '{}'", label);
         WebElement checkbox = driver.findElement(By.xpath(String.format("//td[contains(text(), '%s')]/following-sibling::td/input", label)));
         checkbox.isEnabled();
         checkbox.click();
