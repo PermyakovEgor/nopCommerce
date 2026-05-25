@@ -24,7 +24,6 @@ public class CreateContactTest extends BaseTest{
             .country("Russia")
             .build();
 
-
     Account account2 = AccountFactory.getAccount(); //рандомные значение через faker
 
     Account account3 = Account.builder() //Некоторые поля пустые, заполнены стандартными значениями
@@ -35,7 +34,6 @@ public class CreateContactTest extends BaseTest{
             .country("Russia")
             .build();
 
-
     @Test
     @DisplayName("Создание нового контакта")
     @Tag("smoke")
@@ -45,7 +43,6 @@ public class CreateContactTest extends BaseTest{
                 .openCreateContPage()
                 .inputWriteContact(account)
                 .textareaWriteContact("door cod - 1234", "Адреса одинаковые, кликнул чекбоксом")
-                .selectCheckboxContact()
                 .clickSave();
         assertEquals(addedAccOrContPage.saveContact(), "IVAN IVANOV", "Контакт не создался, либо он уже создан");
     }

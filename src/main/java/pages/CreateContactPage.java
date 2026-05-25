@@ -37,14 +37,9 @@ public class CreateContactPage extends BasePage{
     }
 
     public CreateContactPage textareaWriteContact(String street, String description) {
-        log.info("Adding textarea new contact street: '{}' and description: '{}'", street, description);
+        log.info("Adding textarea new contact street: '{}' and description: '{}' and select checkbox", street, description);
         new AddressTextarea(driver, "Primary Address", "Address").write(street);
         new Textarea(driver, "description").writeDescription(description);
-        return this;
-    }
-
-    public CreateContactPage selectCheckboxContact() {
-        log.info("Selecting checkbox copy address new contact");
         new Checkbox(driver,  "Copy address from left:").selectCheckbox();
         return this;
     }
